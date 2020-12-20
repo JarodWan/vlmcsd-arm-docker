@@ -5,7 +5,7 @@ RUN apk add --no-cache git make build-base && \
     cd vlmcsd && \
     make
 
-FROM --platform=linux/arm64 alpine:latest
+FROM alpine:latest
 # set version label
 ARG BUILD_DATE
 ARG VERSION
