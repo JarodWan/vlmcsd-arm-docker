@@ -33,6 +33,11 @@ $ docker run -d -p 1688:1688 --name kms --restart=always jarodwan/vlmcsd
 ## DockerFile
 If you wanna find some Dockerfile as a reference, you could find a Multi Architecture [Dockerfile][4]
 
+## Multi Architecture command
+```bash
+$ docker buildx build --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x -t jarodwan/vlmcsd --push -f ./Dockerfile.architecture .
+```
+
 [1]: https://docs.docker.com/
 [2]: https://docs.docker.com/install/
 [3]: https://hub.docker.com/r/jarodwan/vlmcsd
