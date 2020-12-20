@@ -1,11 +1,11 @@
-FROM alpine:latest as builder
+FROM --platform=linux/arm64 alpine:latest as builder
 WORKDIR /root
 RUN apk add --no-cache git make build-base && \
     git clone --branch master --single-branch https://github.com/Wind4/vlmcsd.git && \
     cd vlmcsd && \
     make
 
-FROM alpine:latest
+FROM --platform=linux/arm64 alpine:latest
 # set version label
 ARG BUILD_DATE
 ARG VERSION
