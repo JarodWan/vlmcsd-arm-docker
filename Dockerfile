@@ -1,3 +1,4 @@
+# builder docker image information
 FROM alpine:latest as builder
 WORKDIR /root
 RUN apk add --no-cache git make build-base && \
@@ -5,12 +6,13 @@ RUN apk add --no-cache git make build-base && \
     cd vlmcsd && \
     make
 
+# base docker image information
 FROM alpine:latest
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="jarodwan"
+LABEL MAINTAINER="JarodWan <Jarod.Wan@gmail.com>"
 
 COPY --from=builder /root/vlmcsd/bin/vlmcsd /vlmcsd
 RUN apk add --no-cache tzdata
