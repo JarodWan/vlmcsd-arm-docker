@@ -45,4 +45,4 @@ $ docker buildx build --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7
 [1]: https://docs.docker.com/
 [2]: https://docs.docker.com/install/
 [3]: https://hub.docker.com/r/jarodwan/vlmcsd
-[4]: https://github.com/JarodWan/vlmcsd-docker/blob/main/
+[4]: https://github.com/JarodWan/vlmcsd-docker/
