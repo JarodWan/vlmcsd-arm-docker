@@ -35,10 +35,14 @@ If you wanna find some Dockerfile as a reference, you could find a Multi Archite
 
 ## Multi Architecture command
 ```bash
+$ docker buildx create --name mybuilder
+$ docker buildx inspect mybuilder --bootstrap
+$ docker buildx ls
+$ docker buildx use mybuilder
 $ docker buildx build --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x -t jarodwan/vlmcsd --push -f ./Dockerfile.architecture .
 ```
 
 [1]: https://docs.docker.com/
 [2]: https://docs.docker.com/install/
 [3]: https://hub.docker.com/r/jarodwan/vlmcsd
-[4]: https://github.com/JarodWan/vlmcsd-arm-docker/blob/main/Dockerfile
+[4]: https://github.com/JarodWan/vlmcsd-docker/blob/main/
