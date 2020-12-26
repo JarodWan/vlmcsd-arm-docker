@@ -15,7 +15,7 @@ LABEL maintainer="jarodwan"
 COPY --from=builder /root/vlmcsd/bin/vlmcsd /vlmcsd
 RUN apk add --no-cache tzdata
 
-# expose port
+# expose port use for KMS
 EXPOSE 1688/tcp
 
 CMD ["/vlmcsd", "-D", "-d", "-t", "3", "-e", "-v"]
